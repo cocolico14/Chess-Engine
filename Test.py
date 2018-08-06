@@ -14,33 +14,6 @@ notation = ["a8", "b8", "c8", "d8", "e8", "f8", "g8", "h8",
 
 zipMap = dict(zip(notation, range(0,64)))
 
-m = b.makeMove()[(zipMap["e2"], zipMap["e4"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-m = b.makeMove()[(zipMap["e7"], zipMap["e5"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-m = b.makeMove()[(zipMap["d2"], zipMap["d4"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-m = b.makeMove()[(zipMap["e5"], zipMap["d4"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-m = b.makeMove()[(zipMap["e4"], zipMap["e5"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-m = b.makeMove()[(zipMap["d4"], zipMap["d3"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-m = b.makeMove()[(zipMap["e5"], zipMap["e6"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-m = b.makeMove()[(zipMap["d3"], zipMap["c2"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-m = b.makeMove()[(zipMap["e6"], zipMap["e7"])]
-b = b.getCurrentPlayer().makeMove(m)
-
 while(not b.getCurrentPlayer().isCheckMate()):
     if b.getCurrentPlayer().isCheck():
         print(b.getCurrentPlayer(), "is Checked!")
