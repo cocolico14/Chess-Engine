@@ -123,7 +123,7 @@ class PromotionMove(Move):
         return self.__promoteP
 
     def __repr__(self):
-        return f"AttackMove({super().getPreCord(), super().getMovedPiece(), super().getNewCord(), self.__promoteP, self.__attackedP})"
+        return f"PromotionMove({super().getPreCord(), super().getMovedPiece(), super().getNewCord(), self.__promoteP, self.__attackedP})"
 
     def __hash__(self):
         sup = super().__hash__()

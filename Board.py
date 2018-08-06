@@ -82,7 +82,7 @@ class Board():
         test = {}
         for move in self.__blackPossMoves.union(self.__whitePossMoves):
             if type(move) is PromotionMove : 
-                test[(move.getPreCord(), move.getNewCord(), move.getPromotedPiece())] = move
+                test[(move.getPreCord(), move.getNewCord(), str(move.getPromotedPiece()) )] = move
             else:
                 test[(move.getPreCord(), move.getNewCord())] = move
         
@@ -122,12 +122,14 @@ class Board():
     def __str__(self):
         res = ""
         for i in range(0, 8):
+            res += str(8 - i) + " "
             for j in range(0, 8):
                 if self.__config[i*8 + j] != None:
                     res += str(self.__config[i*8 + j]) + " "
                 else:
                     res += "-" + " "
             res += "\n"
+        res += "  a b c d e f g h"
         return res
     
     

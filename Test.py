@@ -14,7 +14,32 @@ notation = ["a8", "b8", "c8", "d8", "e8", "f8", "g8", "h8",
 
 zipMap = dict(zip(notation, range(0,64)))
 
+m = b.makeMove()[(zipMap["e2"], zipMap["e4"])]
+b = b.getCurrentPlayer().makeMove(m)
 
+m = b.makeMove()[(zipMap["e7"], zipMap["e5"])]
+b = b.getCurrentPlayer().makeMove(m)
+
+m = b.makeMove()[(zipMap["d2"], zipMap["d4"])]
+b = b.getCurrentPlayer().makeMove(m)
+
+m = b.makeMove()[(zipMap["e5"], zipMap["d4"])]
+b = b.getCurrentPlayer().makeMove(m)
+
+m = b.makeMove()[(zipMap["e4"], zipMap["e5"])]
+b = b.getCurrentPlayer().makeMove(m)
+
+m = b.makeMove()[(zipMap["d4"], zipMap["d3"])]
+b = b.getCurrentPlayer().makeMove(m)
+
+m = b.makeMove()[(zipMap["e5"], zipMap["e6"])]
+b = b.getCurrentPlayer().makeMove(m)
+
+m = b.makeMove()[(zipMap["d3"], zipMap["c2"])]
+b = b.getCurrentPlayer().makeMove(m)
+
+m = b.makeMove()[(zipMap["e6"], zipMap["e7"])]
+b = b.getCurrentPlayer().makeMove(m)
 
 while(not b.getCurrentPlayer().isCheckMate()):
     if b.getCurrentPlayer().isCheck():
@@ -23,9 +48,6 @@ while(not b.getCurrentPlayer().isCheckMate()):
     print(b)
     inputRaw = input('preCord newCord (promoPiece): ')
     data = inputRaw.split()
-    for (movee, v) in b.makeMove().items():
-        if len(movee) == 3:
-            print(v)
     try:
         if(len(data) == 2): m = b.makeMove()[(zipMap[data[0]], zipMap[data[1]])]
         elif(len(data) == 3): m = b.makeMove()[(zipMap[data[0]], zipMap[data[1]], data[2])]
@@ -35,52 +57,3 @@ while(not b.getCurrentPlayer().isCheckMate()):
     b = b.getCurrentPlayer().makeMove(m)
 
 
-print(b)
-m = b.makeMove()[(zipMap["e2"], zipMap["e4"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-print(b)
-m = b.makeMove()[(zipMap["e7"], zipMap["e5"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-print(b)
-m = b.makeMove()[(zipMap["g1"], zipMap["e2"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-print(b)
-m = b.makeMove()[(zipMap["d8"], zipMap["h4"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-print(b)
-m = b.makeMove()[(zipMap["b1"], zipMap["c3"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-print(b)
-m = b.makeMove()[(zipMap["b8"], zipMap["c6"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-print(b)
-m = b.makeMove()[(zipMap["g2"], zipMap["g3"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-print(b)
-m = b.makeMove()[(zipMap["h4"], zipMap["g5"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-print(b) 
-m = b.makeMove()[(zipMap["d2"], zipMap["d4"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-print(b)    
-m = b.makeMove()[(zipMap["c6"], zipMap["d4"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-print(b) 
-m = b.makeMove()[(zipMap["a2"], zipMap["a3"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-print(b) 
-m = b.makeMove()[(zipMap["d4"], zipMap["f3"])]
-b = b.getCurrentPlayer().makeMove(m)
-
-print(b)    

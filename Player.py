@@ -66,7 +66,6 @@ class Player(ABC):
             moveTransition = self.makeMove(move)
             if (moveTransition is not None
                 and not moveTransition.getCurrentPlayer().isCheck()):
-                print(move)
                 return True
         return False
 
